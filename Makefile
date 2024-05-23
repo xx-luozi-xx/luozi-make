@@ -29,27 +29,27 @@
 
 # 导入路径
 include makefile.dep
-# 导入版本监测
+# 导入跨平台监测
 include makefile.os
 
 # 编译器
 CC= g++
 # 编译器标志
 
-CFLAGS= -MMD -MP -c -Wall -O2 -I$(H_DIR) 
-LDFLAGS= -Wall 
+CFLAGS = -MMD -MP -c -Wall -O2 -I$(H_DIR) 
+LDFLAGS = -Wall 
 
 # 可执行文件名称
-TARGET_SRC= $(wildcard $(SRC_DIR)/main/*.cpp)
-TARGET= $(TARGET_SRC:$(SRC_DIR)/main/%.cpp=$(BIN_DIR)/%.exe)
-TARGET_OBJ= $(TARGET_SRC:$(SRC_DIR)/main/%.cpp=$(OBJ_DIR)/main/%.o)
+TARGET_SRC = $(wildcard $(SRC_DIR)/main/*.cpp)
+TARGET = $(TARGET_SRC:$(SRC_DIR)/main/%.cpp=$(BIN_DIR)/%.exe)
+TARGET_OBJ = $(TARGET_SRC:$(SRC_DIR)/main/%.cpp=$(OBJ_DIR)/main/%.o)
 
 # 找到所有的 .cpp 文件
-SOURCES= $(wildcard $(SRC_DIR)/*.cpp)
+SOURCES = $(wildcard $(SRC_DIR)/*.cpp)
 # 将 .cpp 文件的列表转换为 .o 文件的列表
-OBJECTS= $(SOURCES:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
+OBJECTS = $(SOURCES:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 # 每个.o文件的依赖表文件
-DEPS= $(OBJECTS:.o=.d) $(TARGET_OBJ:.o=.d)
+DEPS = $(OBJECTS:.o=.d) $(TARGET_OBJ:.o=.d)
 
 # 默认目标
 all: dirs $(TARGET) 
