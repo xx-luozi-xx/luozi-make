@@ -1,8 +1,8 @@
 # =============================================================================
-# Filename: makefile.dep
+# Filename: makefile.os
 # Author: luozi
 # Date: 2024-05-23
-# Description: This makefile file is used to import the paths to each folder
+# Description: This is a makefile for different operating systems.
 # 
 # Copyright (c) 2024, xx-luozi-xx
 # All rights reserved.
